@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Menu, X, ShoppingBag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -10,28 +11,28 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center">
+          <Link to="/" className="flex items-center">
             <img 
               src="/lovable-uploads/a146e8d2-edb7-4c66-bc11-bdcb6aa4d6b2.png" 
               alt="XCYTE Logo" 
               className="h-8 w-auto"
             />
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#home" className="text-foreground hover:text-accent transition-colors">
+            <Link to="/" className="text-foreground hover:text-accent transition-colors">
               Home
-            </a>
+            </Link>
             <a href="#shop" className="text-foreground hover:text-accent transition-colors">
               Shop
             </a>
-            <a href="#about" className="text-foreground hover:text-accent transition-colors">
+            <Link to="/about" className="text-foreground hover:text-accent transition-colors">
               About
-            </a>
-            <a href="#contact" className="text-foreground hover:text-accent transition-colors">
+            </Link>
+            <Link to="/contact" className="text-foreground hover:text-accent transition-colors">
               Contact
-            </a>
+            </Link>
           </div>
 
           {/* Cart & Mobile Menu */}
@@ -60,13 +61,13 @@ const Navigation = () => {
         {isOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 border-t border-border">
-              <a
-                href="#home"
+              <Link
+                to="/"
                 className="block px-3 py-2 text-foreground hover:text-accent transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Home
-              </a>
+              </Link>
               <a
                 href="#shop"
                 className="block px-3 py-2 text-foreground hover:text-accent transition-colors"
@@ -74,20 +75,20 @@ const Navigation = () => {
               >
                 Shop
               </a>
-              <a
-                href="#about"
+              <Link
+                to="/about"
                 className="block px-3 py-2 text-foreground hover:text-accent transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 About
-              </a>
-              <a
-                href="#contact"
+              </Link>
+              <Link
+                to="/contact"
                 className="block px-3 py-2 text-foreground hover:text-accent transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Contact
-              </a>
+              </Link>
             </div>
           </div>
         )}
